@@ -9,6 +9,9 @@
 |
 <a href="/diceTracker">Dice Tracker</a>
 <hr>
+<#-- Giorgos Antoniadis-->
+<a href="/animalTracker">Animal Tracker</a>
+<hr>
 <h2>Welcome to our page!</h2>
 <hr>
 </body>
