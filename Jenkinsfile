@@ -52,6 +52,7 @@ pipeline {
         stage('Placeholder'){
             steps{
                 echo 'This is a placeholder!'
+                echo 'Hello from local!'
             }
         }
     }
