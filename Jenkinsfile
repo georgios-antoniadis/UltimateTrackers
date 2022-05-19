@@ -51,8 +51,8 @@ pipeline {
 
         stage('Local deploy of image'){
             steps{
-                sh 'sudo docker pull ge0rge21/ultimate_trackers'
-                sh 'sudo docker run ge0rge21/ultimate_trackers'
+                sh 'docker pull ge0rge21/ultimate_trackers'
+                sh 'docker run ge0rge21/ultimate_trackers'
             }
         }
     }
