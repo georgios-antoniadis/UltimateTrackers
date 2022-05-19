@@ -39,7 +39,7 @@ pipeline {
         stage('Create and upload image to docker hub') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com/repository/docker/ge0rge21/ultimate_trackers','docker_Hub') {
+                    docker.withRegistry('https://registry.hub.docker.com/repository/docker/ge0rge21/ultimate_trackers','docker_hub') {
                         def customImage = docker.build("ge0rge21/ultimate_trackers:latest")
             
                         /* Push the container to the custom Registry */
