@@ -7,6 +7,7 @@
 <body>
 <b><a href="/">Index</a></b>
 |
+<hr>
 <a href="/diceTracker">Dice Tracker</a>
 <hr>
 <#-- Giorgos Antoniadis-->

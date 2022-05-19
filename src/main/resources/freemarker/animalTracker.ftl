@@ -11,7 +11,7 @@
 |
 <b><a href="/animalTracker">Animal Tracker</a></b>
 <hr>
-<h2>Game of dice...</h2>
+<h2>Game of random animal...</h2>
 <hr>
 <div style="text-align: center">
     <#if numberOfDice??>
