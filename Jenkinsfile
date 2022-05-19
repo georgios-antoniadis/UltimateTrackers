@@ -49,10 +49,10 @@ pipeline {
             }
         }
 
-        stage('Placeholder'){
+        stage('Local deploy of image'){
             steps{
-                echo 'This is a placeholder!'
-                echo 'Hello from local!'
+                sh 'sudo docker pull ge0rge21/ultimate_trackers'
+                sh 'sudo docker run ge0rge21/ultimate_trackers'
             }
         }
     }
