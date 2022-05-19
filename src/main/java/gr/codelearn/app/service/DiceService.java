@@ -35,4 +35,20 @@ public class DiceService {
         // we want the result of the throw to be returned so that the user also knows what it was
         return result;
     }
+
+    // Shape Tracker
+
+    public List<Die> getAllGeometricShapeResults(){
+        return diceRepository.getAllGeometricShapeResults();
+    }
+
+    public int throwGeometricShape() {
+        int min = 1;
+        int max = 6;
+        int result = ThreadLocalRandom.current().nextInt(min, max + 1);
+        log.info("A die was thrown with the result being: {}", result);
+        diceRepository.saveGeometricShape(result);
+        // we want the result of the throw to be returned so that the user also knows what it was
+        return result;
+    }
 }
