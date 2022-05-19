@@ -36,7 +36,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Create and upload image to docker hub') {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com/repository/docker/ge0rge21/ultimate_trackers','docker_hub') {
@@ -49,6 +49,13 @@ pipeline {
             }
         }
         
+        stage('Deploying to Azure VM'){
+            steps{
+                sh 'ssh -i UltimateTrackersVM_key.pem username@20.107.222.226'
+                sh 'Connected to VM!'
+            }
+        }
+
         stage('Placeholder'){
             steps{
                 echo 'This is a placeholder!'
