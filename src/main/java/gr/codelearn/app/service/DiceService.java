@@ -35,4 +35,20 @@ public class DiceService {
         // we want the result of the throw to be returned so that the user also knows what it was
         return result;
     }
+
+    // Animal Tracker
+
+    public List<Die> getAllAnimalResults(){
+        return diceRepository.getAllAnimalResults();
+    }
+
+    public int throwAnimal() {
+        int min = 1;
+        int max = 6;
+        int result = ThreadLocalRandom.current().nextInt(min, max + 1);
+        log.info("A die was thrown with the result being: {}", result);
+        diceRepository.saveAnimal(result);
+        // we want the result of the throw to be returned so that the user also knows what it was
+        return result;
+    }
 }

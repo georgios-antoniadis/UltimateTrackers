@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad850cc2-a1ce-4717-97b0-9459521a8c9a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/freemarker/animalTracker.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/freemarker/animalTracker.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,21 +35,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/george/Documents/AthensTech/Agile/Coursework/UltimateTrackers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;8f8fd8884ff94f045864fc604a89aef1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/george/Documents/AthensTech/Agile/UltimateTrackers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "8f8fd8884ff94f045864fc604a89aef1"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.MainApplication">
+    <configuration name="MainApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="UltimateTrackers" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="gr.codelearn.app.MainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ccp6148-diceTracker" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="gr.codelearn.app.MainApplication" />
@@ -70,6 +77,7 @@
       <workItem from="1651299768397" duration="6449000" />
       <workItem from="1651478680625" duration="792000" />
       <workItem from="1651479932576" duration="262000" />
+      <workItem from="1652947533679" duration="770000" />
     </task>
     <servers />
   </component>
