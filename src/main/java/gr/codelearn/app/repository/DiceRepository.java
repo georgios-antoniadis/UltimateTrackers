@@ -67,7 +67,8 @@ public class DiceRepository {
 
 
     // Animal Tracker
-
+    // This method fetches all data found within the ANIMALTRACKER table of the database.
+    // It is executed each time the user visits the animaTracker.ftl page.
     public List<Die> getAllAnimalResults() {
         List<Die> allAnimalResults = new ArrayList<>();
         try {
