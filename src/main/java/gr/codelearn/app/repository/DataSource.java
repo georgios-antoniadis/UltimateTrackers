@@ -12,14 +12,12 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * Class that performs the connection with the database. Within this class, one can change the database server used, as
- * well as set username, password and connection URL. Knowledge of how JDBC works is advised if one decides to NOT use
- * MySQL and wants to replace it with some other server. Practically, the only thing that needs to be changed here
- * are the JDBC_DRIVER, DB_URL, USERNAME and PASSWORD fields.
- *
- * The executeScriptSQL() method executes a set of queries during the initialization of the application. These queries
- * are usually for the creation/drops of database tables etc., and can be found under the directory:
- * resources/sql.properties
+ * Class that performs the connection with the database. Within this class is included the 
+ * connection to the mysql database which is running on a separate docker container on the VM.
+ * There is no longer a need for an sql.properties file since the application is designed to run
+ * on an existing DB configuration which took place individually on the VM. All tables needed 
+ * are already created and data is no longer coupled to the application. Meaning that with each new 
+ * build of the application, data from previous build is not deleted.
  */
 @Component
 @Slf4j
@@ -35,14 +33,9 @@ public class DataSource {
     private static Connection connection;
     private static final Properties sqlCommands = new Properties();
 
-    // we only want the following to happen once at the beginning, during initialization
     static {
         try {
-            // getSqlProperties();
             getConnection();
-            // executeScriptSQL();
-            // the only reason we wanted the connection to stay up that moment was to execute the statements and to see
-            // if a connection with the database was possible
             connection.close();
             connection = null;
         } catch (SQLException e) {
@@ -53,40 +46,8 @@ public class DataSource {
 
     }
 
-    // private static void executeScriptSQL() {
-    //     sqlCommands.forEach((property, value) -> {
-    //         // logging occur so that the user can see what queries are executed
-    //         // pay extra notice to see if new queries you add are the expected queries
-    //         log.info("Executing query with property name: {}", property);
-    //         log.info(String.valueOf(value));
-    //         try {
-    //             Statement statement = connection.createStatement();
-    //             statement.execute(String.valueOf(value));
-    //         } catch (SQLException e) {
-    //             log.info("Error executing query", e);
-    //             System.exit(-1);
-    //         }
-    //     });
-
-    // }
-
     private DataSource() {
     }
-
-    // public static Properties getSqlProperties() {
-    //     if (sqlCommands.isEmpty()) {
-    //         try (InputStream inputStream = DataSource.class.getClassLoader()
-    //                 .getResourceAsStream("sql.properties")) {
-    //             if (inputStream == null) {
-    //                 log.error("Unable to find sql.properties, exiting application.");
-    //             }
-    //             sqlCommands.load(inputStream);
-    //         } catch (IOException e) {
-    //             log.error("Unable to parse sql.properties", e);
-    //         }
-    //     }
-    //     return sqlCommands;
-    // }
 
 
     public static Connection getConnection() throws SQLException {

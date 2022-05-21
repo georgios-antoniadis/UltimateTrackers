@@ -65,9 +65,6 @@ public class DiceController {
     // Adding the animalTracker as another endpoint
     @GetMapping("/animalTracker")
     public String animalTracker(Model model) {
-        // model attribute which adds a list for the html/ftl file to process
-        // in order to access it in the html/ftl file, you need to use the name typed as the first parameter
-        // in this case "allDieResults"
         model.addAttribute("allAnimalResults", diceService.getAllAnimalResults());
         return "animalTracker";
     }
@@ -75,7 +72,6 @@ public class DiceController {
     // Throw animal dice
     @PostMapping("/randomAnimal")
     public String randomAnimal(RedirectAttributes redirectAttributes){
-        // redirect attribute which simply adds what was the result of a throw
         redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwAnimal());
         return "redirect:/animalTracker";
     }

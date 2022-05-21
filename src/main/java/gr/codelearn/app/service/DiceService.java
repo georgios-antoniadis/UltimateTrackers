@@ -11,6 +11,9 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Class that contains the basic business logic of our application. Simply calls the repository/database communication
  * class and returns results to our controller.
+ * 
+ * The throw method is replicated for each of the trackers.
+ * 
  */
 @Service
 @Slf4j
@@ -48,7 +51,6 @@ public class DiceService {
         int result = ThreadLocalRandom.current().nextInt(min, max + 1);
         log.info("A die was thrown with the result being: {}", result);
         diceRepository.saveAnimal(result);
-        // we want the result of the throw to be returned so that the user also knows what it was
         return result;
     }
 }

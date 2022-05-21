@@ -27,6 +27,11 @@ import java.util.List;
  * generated and the rest of the columns are inserted manually. Similarly to the other method, we need to set the
  * position of each "?" value, manually with result being the first position (index), and throw_date the second one. We
  * do not care about a result, as we simply want to execute the insertion and that's it.
+ * 
+ * Each of the trackers has its own copy of the get and save methods. This solution is not ideal due to its poor 
+ * expandability and could be further optimized, however for the purposes of this application this implementation meets
+ * the requirements.
+ * 
  */
 @Component
 @Slf4j
@@ -93,7 +98,6 @@ public class DiceRepository {
             Connection connection = DataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, result);
-            // created a date (current date) and sets it as SQL's timestamp instance, which is required
             preparedStatement.setTimestamp(2, new Timestamp(new Date().getTime()));
             preparedStatement.execute();
         } catch (SQLException e) {
