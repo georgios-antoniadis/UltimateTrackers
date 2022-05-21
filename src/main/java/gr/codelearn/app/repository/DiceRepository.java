@@ -121,6 +121,7 @@ public class DiceRepository {
         return allGeometricShapeResults;
     }
 
+    //saves shape result in db
     public void saveGeometricShape(int result) {
         try {
             String query = "INSERT INTO GEOMETRICSHAPETRACKER(result, throw_date) VALUES(?, ?)";

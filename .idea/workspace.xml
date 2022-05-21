@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad850cc2-a1ce-4717-97b0-9459521a8c9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/freemarker/geometricShapeTracker.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/UltimateTrackers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UltimateTrackers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/repository/DiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/repository/DiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/service/DiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/service/DiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" afterDir="false" />
-    </list>
+    <list default="true" id="ad850cc2-a1ce-4717-97b0-9459521a8c9a" name="Changes" comment="Added geometric shape tracker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -57,6 +51,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "37049a1051b24fc550951399c42adb17"
   }
 }]]></component>
@@ -101,8 +96,16 @@
       <workItem from="1651478680625" duration="792000" />
       <workItem from="1651479932576" duration="262000" />
       <workItem from="1652947533679" duration="770000" />
-      <workItem from="1653148995774" duration="990000" />
+      <workItem from="1653148995774" duration="1444000" />
     </task>
+    <task id="LOCAL-00001" summary="Added geometric shape tracker">
+      <created>1653150229548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653150229548</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +136,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added geometric shape tracker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added geometric shape tracker" />
   </component>
 </project>
