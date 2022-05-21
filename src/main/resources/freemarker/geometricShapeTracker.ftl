@@ -11,7 +11,7 @@
 |
 <b><a href="/geometricShapeTracker">Geometric Shape Tracker</a></b>
 <hr>
-<h2>Game of random geometric shape...</h2>
+<h2>Game of random shape...</h2>
 <hr>
 <div style="text-align: center">
     <#if numberOfDice??>
