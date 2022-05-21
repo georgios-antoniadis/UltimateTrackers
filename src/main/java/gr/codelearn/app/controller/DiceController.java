@@ -80,6 +80,24 @@ public class DiceController {
         return "redirect:/animalTracker";
     }
     // End: Giorgos Antoniadis
+    // Start: Vasilis Rozakos
+    // Adding the geometricShapeTracker as another endpoint
+    @GetMapping("/geometricShapeTracker")
+    public String geometricShapeTracker(Model model) {
+        // model attribute which adds a list for the html/ftl file to process
+        // in order to access it in the html/ftl file, you need to use the name typed as the first parameter
+        // in this case "allDieResults"
+        model.addAttribute("allGeometricShapeResults", diceService.getAllGeometricShapeResults());
+        return "geometricShapeTracker";
+    }
+
+    // Throw geometric shape dice
+    @PostMapping("/randomGeometricShape")
+    public String randomGeometricShape(RedirectAttributes redirectAttributes){
+        // redirect attribute which simply adds what was the result of a throw
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwGeometricShape());
+        return "redirect:/geometricShapeTracker";
+    }
 
 }
 

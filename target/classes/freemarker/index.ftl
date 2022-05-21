@@ -13,7 +13,12 @@
 <#-- Giorgos Antoniadis-->
 <a href="/animalTracker">Animal Tracker</a>
 <hr>
+
+<#-- Vasileios Rozakos-->
+<a href="/geometricShapeTracker">Geometric Shape Tracker</a>
+<hr>
 <h2>Welcome to our page!</h2>
 <hr>
+
 </body>
 </html>
