@@ -13,6 +13,8 @@
 <#-- Giorgos Antoniadis-->
 <a href="/animalTracker">Animal Tracker</a>
 <hr>
+<a href="/viewStatistics">Statistics about Trackers</a>
+<hr>
 <h2>Welcome to our page!</h2>
 <hr>
 </body>

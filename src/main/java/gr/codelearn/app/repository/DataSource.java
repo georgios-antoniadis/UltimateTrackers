@@ -25,12 +25,12 @@ import java.util.Properties;
 @Slf4j
 public class DataSource {
     // JDBC driver name and database URL
-    private static final String JDBC_DRIVER = "org.h2.Driver";
+    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     // Database URL
-    private static final String DB_URL = "jdbc:h2:mem:diceTracker;DB_CLOSE_DELAY=-1";
+    private static final String DB_URL = "jdbc:mysql://172.18.0.2:3306/ultimate_trackers";
     //Database credentials
-    private static final String USERNAME = "sa";
-    private static final String PASSWORD = "sa";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "0000";
 
     private static Connection connection;
     private static final Properties sqlCommands = new Properties();
@@ -38,9 +38,9 @@ public class DataSource {
     // we only want the following to happen once at the beginning, during initialization
     static {
         try {
-            getSqlProperties();
+            // getSqlProperties();
             getConnection();
-            executeScriptSQL();
+            // executeScriptSQL();
             // the only reason we wanted the connection to stay up that moment was to execute the statements and to see
             // if a connection with the database was possible
             connection.close();
@@ -53,40 +53,40 @@ public class DataSource {
 
     }
 
-    private static void executeScriptSQL() {
-        sqlCommands.forEach((property, value) -> {
-            // logging occur so that the user can see what queries are executed
-            // pay extra notice to see if new queries you add are the expected queries
-            log.info("Executing query with property name: {}", property);
-            log.info(String.valueOf(value));
-            try {
-                Statement statement = connection.createStatement();
-                statement.execute(String.valueOf(value));
-            } catch (SQLException e) {
-                log.info("Error executing query", e);
-                System.exit(-1);
-            }
-        });
+    // private static void executeScriptSQL() {
+    //     sqlCommands.forEach((property, value) -> {
+    //         // logging occur so that the user can see what queries are executed
+    //         // pay extra notice to see if new queries you add are the expected queries
+    //         log.info("Executing query with property name: {}", property);
+    //         log.info(String.valueOf(value));
+    //         try {
+    //             Statement statement = connection.createStatement();
+    //             statement.execute(String.valueOf(value));
+    //         } catch (SQLException e) {
+    //             log.info("Error executing query", e);
+    //             System.exit(-1);
+    //         }
+    //     });
 
-    }
+    // }
 
     private DataSource() {
     }
 
-    public static Properties getSqlProperties() {
-        if (sqlCommands.isEmpty()) {
-            try (InputStream inputStream = DataSource.class.getClassLoader()
-                    .getResourceAsStream("sql.properties")) {
-                if (inputStream == null) {
-                    log.error("Unable to find sql.properties, exiting application.");
-                }
-                sqlCommands.load(inputStream);
-            } catch (IOException e) {
-                log.error("Unable to parse sql.properties", e);
-            }
-        }
-        return sqlCommands;
-    }
+    // public static Properties getSqlProperties() {
+    //     if (sqlCommands.isEmpty()) {
+    //         try (InputStream inputStream = DataSource.class.getClassLoader()
+    //                 .getResourceAsStream("sql.properties")) {
+    //             if (inputStream == null) {
+    //                 log.error("Unable to find sql.properties, exiting application.");
+    //             }
+    //             sqlCommands.load(inputStream);
+    //         } catch (IOException e) {
+    //             log.error("Unable to parse sql.properties", e);
+    //         }
+    //     }
+    //     return sqlCommands;
+    // }
 
 
     public static Connection getConnection() throws SQLException {
