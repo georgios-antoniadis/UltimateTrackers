@@ -51,7 +51,7 @@ pipeline {
 
         stage('Stop docker and sleep'){
             steps{
-                sh 'docker stop $(docker ps-a -q)'
+                sh 'docker stop $(docker ps -a -q) -t 0'
                 sh 'docker start some-mysql'
                 sh 'sleep 10'
             }
