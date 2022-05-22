@@ -59,7 +59,7 @@ pipeline {
 
         stage('Local deploy of image'){
             steps{
-                sh 'docker run --network some-network ge0rge21/ultimate_trackers:latest'
+                sh 'docker run --network some-network -p 8090:8090 ge0rge21/ultimate_trackers:latest'
             }
         }
     }
