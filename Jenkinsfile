@@ -51,8 +51,15 @@ pipeline {
 
         stage('Local deploy of image'){
             steps{
-                sh 'docker pull ge0rge21/ultimate_trackers:latest'
-                sh 'docker run -d ge0rge21/ultimate_trackers:latest'
+                sh 'docker stop $(docker ps-a -q)'
+                sh 'docker start some-mysql'
+                sh 'sleep 10'
+            }
+        }
+
+        stage('Local deploy of image'){
+            steps{
+                sh 'docker run -d --name trackers --network some-network ge0rge21/ultimate_trackers:latest'
             }
         }
     }
