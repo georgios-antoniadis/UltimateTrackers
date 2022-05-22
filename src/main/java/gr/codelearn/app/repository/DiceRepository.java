@@ -1,6 +1,7 @@
 package gr.codelearn.app.repository;
 
 import gr.codelearn.app.model.Die;
+import gr.codelearn.app.model.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -70,6 +71,35 @@ public class DiceRepository {
         }
     }
 
+    public void logDice(){
+        try{
+            String query = "INSERT INTO DICELOG(visit_time) VALUES(?)";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
+
+    public List<Log> getAllDiceLogs() {
+        List<Log> allDiceLogs = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM DICELOG";
+            Connection connection = DataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                long id = resultSet.getLong(1);
+                Timestamp visitDate = resultSet.getTimestamp(2);
+                allDiceLogs.add(new Log(id, visitDate));
+            }
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+        return allDiceLogs;
+    }
 
     // Animal Tracker
 
@@ -103,6 +133,36 @@ public class DiceRepository {
         } catch (SQLException e) {
             log.error("For some reason, a connection could not be obtained", e);
         }
+    }
+
+    public void logAnimal(){
+        try{
+            String query = "INSERT INTO ANIMALLOG(visit_time) VALUES(?)";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
+
+    public List<Log> getAllAnimalLogs() {
+        List<Log> allAnimalLogs = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM ANIMALLOG";
+            Connection connection = DataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                long id = resultSet.getLong(1);
+                Timestamp visitDate = resultSet.getTimestamp(2);
+                allAnimalLogs.add(new Log(id, visitDate));
+            }
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+        return allAnimalLogs;
     }
 
 }

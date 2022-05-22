@@ -79,8 +79,8 @@ public class DiceController {
     @GetMapping("/viewStatistics")
     public String viewStatistics(Model model) {
         // Returning stats page and adding as attributes the data from all tables
-        model.addAttribute("allAnimalResults", diceService.getAllAnimalResults());
-        model.addAttribute("allDieResults", diceService.getAllDieResults());
+        model.addAttribute("allAnimalLogs", diceService.getAllAnimalLogs());
+        model.addAttribute("allDiceLogs", diceService.getAllDiceLogs());
         return "viewStatistics";
     }
 

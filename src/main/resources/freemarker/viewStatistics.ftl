@@ -23,31 +23,28 @@
    Tables:
    - Have the same three columns
     - ID
-    - Die result
     - Timestamp
-   - Are updated by playing the random game in their corresponding pages
+   - Are updated by visiting the corresponding pages
  -->
 
 <#-- Dice Tracker -->
-<#if allDieResults?has_content>
+<#if allDiceLogs?has_content>
     <table style="margin-left: auto;margin-right: auto">
-        <caption>Dice Tracker</caption>
+        <caption>Dice Tracker Logs</caption>
         <tr>
             <th>ID</th>
-            <th>Result</th>
             <th>Date</th>
         </tr>
-        <#list allDieResults as dieResult>
+        <#list allDiceLogs as diceLog>
             <tr>
-                <td>${dieResult.id}</td>
-                <td>${dieResult.result}</td>
-                <td>${dieResult.throwDate}</td>
+                <td>${diceLog.id}</td>
+                <td>${diceLog.visitDate}</td>
             </tr>
         </#list>
     </table>
 
 <#else>
-    <caption>There is no data in Dice Tracker!</caption>
+    <caption>There is no activity in Dice Tracker!</caption>
 
 </#if>
 
@@ -56,27 +53,25 @@
 
 <#-- Animal Tracker -->
 
-<#if allAnimalResults?has_content>
+<#if allAnimalLogs?has_content>
     <table style="margin-left: auto;margin-right: auto">
-        <caption>Animal Tracker</caption>
+        <caption>Animal Tracker Logs</caption>
         <tr>
             <th>ID</th>
-            <th>Result</th>
             <th>Date</th>
         </tr>
 
-        <#list allAnimalResults as animalResult>
+        <#list allAnimalLogs as animalLog>
             <tr>
 
-                <td>${animalResult.id}</td>
-                <td>${animalResult.result}</td>
-                <td>${animalResult.throwDate}</td>
+                <td>${animalLog.id}</td>
+                <td>${animalLog.visitDate}</td>
             </tr>
         </#list>
     </table>
 
 <#else>
-    <caption>There is no data in Animal Tracker!</caption>
+    <caption>There is no activity in Animal Tracker!</caption>
 
 </#if>
 
