@@ -19,6 +19,7 @@ import java.util.Properties;
  * are already created and data is no longer coupled to the application. Meaning that with each new 
  * build of the application, data from previous build is not deleted.
  */
+
 @Component
 @Slf4j
 public class DataSource {
@@ -43,7 +44,6 @@ public class DataSource {
             log.info("Shutting down application...");
             System.exit(-1);
         }
-
     }
 
     private DataSource() {
