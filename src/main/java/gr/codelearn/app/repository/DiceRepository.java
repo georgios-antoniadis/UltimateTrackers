@@ -34,6 +34,7 @@ import java.util.List;
  * the requirements.
  * 
  */
+
 @Component
 @Slf4j
 public class DiceRepository {
