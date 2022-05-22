@@ -85,6 +85,11 @@ public class DiceController {
         return "viewStatistics";
     }
 
+    @GetMapping("/resetStatistics")
+    public String resetStatistics(Model model) {
+        return "resetStatistics";
+    }
+
     @PostMapping("/emptyDice")
     public String resetDice(RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyDiceLogs());

@@ -17,6 +17,8 @@
 <hr>
 <a href="/viewStatistics">Statistics about Trackers</a>
 <hr>
+<a href="/resetStatistics">Reset statistics about Trackers</a>
+<hr>
 <#-- Vasileios Rozakos-->
 <h2>Welcome to our page!</h2>
 <hr>
