@@ -85,12 +85,29 @@ public class DiceController {
         return "viewStatistics";
     }
 
-    public String resetStati(Model model) {
+    @PostMapping("/emptyDice")
+    public String resetDice(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyDiceLogs());
+        return "redirect:/resetStatistics";
+    }
+
+    @PostMapping("/emptyAnimal")
+    public String resetAnimal(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyAnimalLogs());
+        return "redirect:/resetStatistics";
+    }
+
+    @PostMapping("/emptyShape")
+    public String resetShape(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyShapeLogs());
+        return "redirect:/resetStatistics";
+    }
+    public void resetStatisticsShape(Model model) {
         // Returning stats page and adding as attributes the data from all tables
         model.addAttribute("allAnimalLogs", diceService.getAllAnimalLogs());
         model.addAttribute("allDiceLogs", diceService.getAllDiceLogs());
         model.addAttribute("allShapeLogs", diceService.getAllShapeLogs());
-        return "viewStatistics";
+
     }
 
     // End: Giorgos Antoniadis

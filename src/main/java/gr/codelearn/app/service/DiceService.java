@@ -94,4 +94,19 @@ public class DiceService {
     public List<Log> getAllShapeLogs(){
         return diceRepository.getAllShapeLogs();
     }
+
+    public Object emptyDiceLogs(){
+        diceRepository.resetDiceStats();
+        return null;
+    }
+
+    public Object emptyAnimalLogs(){
+        diceRepository.resetAnimalStats();
+        return null;
+    }
+
+    public Object emptyShapeLogs(){
+        diceRepository.resetShapeStats();
+        return null;
+    }
 }
