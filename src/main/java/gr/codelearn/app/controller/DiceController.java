@@ -85,6 +85,14 @@ public class DiceController {
         return "viewStatistics";
     }
 
+    public String resetStati(Model model) {
+        // Returning stats page and adding as attributes the data from all tables
+        model.addAttribute("allAnimalLogs", diceService.getAllAnimalLogs());
+        model.addAttribute("allDiceLogs", diceService.getAllDiceLogs());
+        model.addAttribute("allShapeLogs", diceService.getAllShapeLogs());
+        return "viewStatistics";
+    }
+
     // End: Giorgos Antoniadis
     // Start: Vasilis Rozakos
     // Adding the geometricShapeTracker as another endpoint

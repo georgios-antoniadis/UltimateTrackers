@@ -235,4 +235,35 @@ public class DiceRepository {
         }
         return allAnimalLogs;
     }
+
+    public void resetDiceStats(){
+        try{
+            String query = "TRUNCATE TABLE DICELOG";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+}
+    public void resetAnimalStats(){
+        try{
+            String query = "TRUNCATE TABLE ANIMALLOG";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
+    public void resetShapeStats(){
+        try{
+            String query = "TRUNCATE TABLE SHAPELOG";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
 }
