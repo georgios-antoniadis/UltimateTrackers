@@ -72,6 +72,8 @@ public class DiceRepository {
         }
     }
 
+
+    // Method that logs a visit to the dice tracker page
     public void logDice(){
         try{
             String query = "INSERT INTO DICELOG(visit_time) VALUES(?)";
