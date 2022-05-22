@@ -1,6 +1,7 @@
 package gr.codelearn.app.repository;
 
 import gr.codelearn.app.model.Die;
+import gr.codelearn.app.model.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +28,11 @@ import java.util.List;
  * generated and the rest of the columns are inserted manually. Similarly to the other method, we need to set the
  * position of each "?" value, manually with result being the first position (index), and throw_date the second one. We
  * do not care about a result, as we simply want to execute the insertion and that's it.
+ * 
+ * Each of the trackers has its own copy of the get and save methods. This solution is not ideal due to its poor 
+ * expandability and could be further optimized, however for the purposes of this application this implementation meets
+ * the requirements.
+ * 
  */
 @Component
 @Slf4j
@@ -65,6 +71,35 @@ public class DiceRepository {
         }
     }
 
+    public void logDice(){
+        try{
+            String query = "INSERT INTO DICELOG(visit_time) VALUES(?)";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
+
+    public List<Log> getAllDiceLogs() {
+        List<Log> allDiceLogs = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM DICELOG";
+            Connection connection = DataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                long id = resultSet.getLong(1);
+                Timestamp visitDate = resultSet.getTimestamp(2);
+                allDiceLogs.add(new Log(id, visitDate));
+            }
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+        return allDiceLogs;
+    }
 
     // Animal Tracker
     // This method fetches all data found within the ANIMALTRACKER table of the database.
@@ -94,7 +129,6 @@ public class DiceRepository {
             Connection connection = DataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, result);
-            // created a date (current date) and sets it as SQL's timestamp instance, which is required
             preparedStatement.setTimestamp(2, new Timestamp(new Date().getTime()));
             preparedStatement.execute();
         } catch (SQLException e) {
@@ -121,6 +155,19 @@ public class DiceRepository {
         return allGeometricShapeResults;
     }
 
+    public void logAnimal(){
+        try{
+            String query = "INSERT INTO ANIMALLOG(visit_time) VALUES(?)";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    
+    }
+
     //saves shape result in db
     public void saveGeometricShape(int result) {
         try {
@@ -135,4 +182,23 @@ public class DiceRepository {
             log.error("For some reason, a connection could not be obtained", e);
         }
     }
+
+    public List<Log> getAllAnimalLogs() {
+        List<Log> allAnimalLogs = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM ANIMALLOG";
+            Connection connection = DataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                long id = resultSet.getLong(1);
+                Timestamp visitDate = resultSet.getTimestamp(2);
+                allAnimalLogs.add(new Log(id, visitDate));
+            }
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+        return allAnimalLogs;
+    }
+
 }

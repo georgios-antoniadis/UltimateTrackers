@@ -11,7 +11,7 @@ pipeline {
             steps {
                 checkout(
                     [$class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
+                    branches: [[name: '*/development']], 
                     extensions: [], 
                     userRemoteConfigs: [[credentialsId: '6f52a10f-bd05-44fc-9d47-1c127403797b', 
                     url: 'https://github.com/georgios-antoniadis/UltimateTrackers/']]]
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com/repository/docker/ge0rge21/ultimate_trackers','docker_hub') {
-                        def customImage = docker.build("ge0rge21/ultimate_trackers:latest")
+                        def customImage = docker.build("ge0rge21/ultimate_trackers:development")
             
                         /* Push the container to the custom Registry */
                         customImage.push()// some block
@@ -51,8 +51,8 @@ pipeline {
 
         stage('Local deploy of image'){
             steps{
-                sh 'docker pull ge0rge21/ultimate_trackers'
-                sh 'docker run ge0rge21/ultimate_trackers'
+                sh 'docker pull ge0rge21/ultimate_trackers:development'
+                sh 'docker run ge0rge21/ultimate_trackers:development'
             }
         }
     }

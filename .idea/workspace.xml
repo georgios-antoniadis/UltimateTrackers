@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="ad850cc2-a1ce-4717-97b0-9459521a8c9a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/freemarker/viewStatistics.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UltimateTrackers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UltimateTrackers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_2_1_212.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/controller/DiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/repository/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/codelearn/app/repository/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/freemarker/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/freemarker/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/codelearn/app/controller/DiceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sql.properties" afterDir="false" />
+    </list>
+=======
     <list default="true" id="ad850cc2-a1ce-4717-97b0-9459521a8c9a" name="Changes" comment="Added geometric shape tracker" />
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +55,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/george/Documents/AthensTech/Agile/UltimateTrackers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;show.run.dashboard.notification&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;37049a1051b24fc550951399c42adb17&quot;
+  }
+}</component>
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -67,6 +103,7 @@
       </set>
     </option>
   </component>
+>>>>>>> main
   <component name="RunManager" selected="Spring Boot.MainApplication (1)">
     <configuration name="MainApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="UltimateTrackers" />
@@ -96,6 +133,10 @@
       <workItem from="1651478680625" duration="792000" />
       <workItem from="1651479932576" duration="262000" />
       <workItem from="1652947533679" duration="770000" />
+<<<<<<< HEAD
+      <workItem from="1653033635033" duration="2894000" />
+      <workItem from="1653064011581" duration="178000" />
+=======
       <workItem from="1653148995774" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="Added geometric shape tracker">
@@ -104,6 +145,7 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1653150229548</updated>
+>>>>>>> main
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

@@ -55,6 +55,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.14" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.14" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.14" level="project" />
-    <orderEntry type="library" name="Maven: com.h2database:h2:2.1.212" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:8.0.29" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.protobuf:protobuf-java:3.19.4" level="project" />
   </component>
 </module>
