@@ -59,7 +59,7 @@ pipeline {
 
         stage('Local deploy of image'){
             steps{
-                sh 'docker run -d --name trackers --network some-network ge0rge21/ultimate_trackers:latest'
+                sh 'docker run --name trackers --network some-network ge0rge21/ultimate_trackers:latest'
             }
         }
     }
