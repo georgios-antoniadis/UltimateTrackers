@@ -81,6 +81,7 @@ public class DiceController {
         // Returning stats page and adding as attributes the data from all tables
         model.addAttribute("allAnimalLogs", diceService.getAllAnimalLogs());
         model.addAttribute("allDiceLogs", diceService.getAllDiceLogs());
+        model.addAttribute("allShapeLogs", diceService.getAllShapeLogs());
         return "viewStatistics";
     }
 

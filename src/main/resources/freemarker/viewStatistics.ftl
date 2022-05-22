@@ -75,5 +75,32 @@
 
 </#if>
 
+<hr>
+<hr>
+
+<#-- Shape Tracker -->
+
+<#if allShapeLogs?has_content>
+    <table style="margin-left: auto;margin-right: auto">
+        <caption>Shape Tracker Logs</caption>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+        </tr>
+
+        <#list allShapeLogs as shapeLog>
+            <tr>
+
+                <td>${shapeLog.id}</td>
+                <td>${shapeLog.visitDate}</td>
+            </tr>
+        </#list>
+    </table>
+
+<#else>
+    <caption>There is no activity in Shape Tracker!</caption>
+
+</#if>
+
 </body>
 </html>

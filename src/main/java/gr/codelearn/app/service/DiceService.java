@@ -51,6 +51,7 @@ public class DiceService {
         return diceRepository.getAllDiceLogs();
     }
 
+    
     // Animal Tracker
 
     // The method now also calls the logger since it is only executed once per visit
@@ -72,7 +73,11 @@ public class DiceService {
         return diceRepository.getAllAnimalLogs();
     }
 
+
+    // Shape Tracker
+
     public List<Die> getAllGeometricShapeResults(){
+        diceRepository.logShape();
         return diceRepository.getAllGeometricShapeResults();
     }
 
@@ -84,5 +89,9 @@ public class DiceService {
         diceRepository.saveGeometricShape(result);
         // we want the result of the throw to be returned so that the user also knows what it was
         return result;
+    }
+
+    public List<Log> getAllShapeLogs(){
+        return diceRepository.getAllShapeLogs();
     }
 }
