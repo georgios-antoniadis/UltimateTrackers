@@ -49,7 +49,7 @@ pipeline {
             }
         }
 
-        stage('Local deploy of image'){
+        stage('Stop docker and sleep'){
             steps{
                 sh 'docker stop $(docker ps-a -q)'
                 sh 'docker start some-mysql'
