@@ -102,7 +102,8 @@ public class DiceRepository {
     }
 
     // Animal Tracker
-
+    // This method fetches all data found within the ANIMALTRACKER table of the database.
+    // It is executed each time the user visits the animaTracker.ftl page.
     public List<Die> getAllAnimalResults() {
         List<Die> allAnimalResults = new ArrayList<>();
         try {
@@ -133,6 +134,25 @@ public class DiceRepository {
         } catch (SQLException e) {
             log.error("For some reason, a connection could not be obtained", e);
         }
+    }// Geometric Shape Tracker
+
+    public List<Die> getAllGeometricShapeResults() {
+        List<Die> allGeometricShapeResults = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM GEOMETRICSHAPETRACKER";
+            Connection connection = DataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                long id = resultSet.getLong(1);
+                int result = resultSet.getInt(2);
+                Timestamp throwDate = resultSet.getTimestamp(3);
+                allGeometricShapeResults.add(new Die(id, result, throwDate));
+            }
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+        return allGeometricShapeResults;
     }
 
     public void logAnimal(){
@@ -141,6 +161,22 @@ public class DiceRepository {
             Connection connection = DataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    
+    }
+
+    //saves shape result in db
+    public void saveGeometricShape(int result) {
+        try {
+            String query = "INSERT INTO GEOMETRICSHAPETRACKER(result, throw_date) VALUES(?, ?)";
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, result);
+            // created a date (current date) and sets it as SQL's timestamp instance, which is required
+            preparedStatement.setTimestamp(2, new Timestamp(new Date().getTime()));
             preparedStatement.execute();
         } catch (SQLException e) {
             log.error("For some reason, a connection could not be obtained", e);
