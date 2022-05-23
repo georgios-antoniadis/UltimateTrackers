@@ -15,9 +15,9 @@
 <hr>
 <div style="text-align: center">
     <#if numberOfDice??>
-        <img src="images/animals/${numberOfDice}.jpg">
+        <img src="/images/animals/${numberOfDice}.jpg">
     <#else>
-        <img src="images/questionMark.png">
+        <img src="/images/questionMark.png">
     </#if>
     <form action="/randomAnimal" method="post">
         <#--when the button is clicked, it requested endpoints "/throwDice"-->
