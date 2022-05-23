@@ -8,18 +8,18 @@
 <b><a href="/">Index</a></b>
 |
 <hr>
-<a href="/diceTracker">Dice Tracker</a>
+<a href="/diceTracker/0">Dice Tracker</a>
 <hr>
 <#-- Giorgos Antoniadis-->
-<a href="/animalTracker">Animal Tracker</a>
+<a href="/animalTracker/0">Animal Tracker</a>
 <hr>
-<a href="/geometricShapeTracker">Geometric Shape Tracker</a>
+<#-- Vasileios Rozakos-->
+<a href="/geometricShapeTracker/0">Geometric Shape Tracker</a>
 <hr>
 <a href="/viewStatistics">Statistics about Trackers</a>
 <hr>
 <a href="/resetStatistics">Reset statistics about Trackers</a>
 <hr>
-<#-- Vasileios Rozakos-->
 <h2>Welcome to our page!</h2>
 <hr>
 

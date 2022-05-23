@@ -33,7 +33,6 @@ public class DiceService {
 
     // The method now also calls the logger since it is only executed once per visit
     public List<Die> getAllDieResults(){
-        diceRepository.logDice();
         return diceRepository.getAllDieResults();
     }
 
@@ -56,7 +55,6 @@ public class DiceService {
 
     // The method now also calls the logger since it is only executed once per visit
     public List<Die> getAllAnimalResults(){
-        diceRepository.logAnimal();
         return diceRepository.getAllAnimalResults();
     }
 
@@ -77,7 +75,6 @@ public class DiceService {
     // Shape Tracker
 
     public List<Die> getAllGeometricShapeResults(){
-        diceRepository.logShape();
         return diceRepository.getAllGeometricShapeResults();
     }
 
@@ -91,6 +88,24 @@ public class DiceService {
         return result;
     }
 
+
+    // Loggers, write to db methods
+    public Object addAnimalLog(){
+        diceRepository.logAnimal();
+        return null;
+    }
+
+    public Object addDiceLog(){
+        diceRepository.logDice();
+        return null;
+    }
+
+    public Object addShapeLog(){
+        diceRepository.logShape();
+        return null;
+    }
+
+    // Loggers get methods
     public List<Log> getAllShapeLogs(){
         return diceRepository.getAllShapeLogs();
     }
