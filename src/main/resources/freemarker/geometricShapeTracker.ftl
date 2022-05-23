@@ -15,9 +15,9 @@
 <hr>
 <div style="text-align: center">
     <#if numberOfDice??>
-        <img src="images/geometricShapes/${numberOfDice}.png">
+        <img src="/images/geometricShapes/${numberOfDice}.png">
     <#else>
-        <img src="images/questionMark.png">
+        <img src="/images/questionMark.png">
     </#if>
     <form action="/randomGeometricShape" method="post">
         <#--when the button is clicked, it requested endpoints "/throwDice"-->

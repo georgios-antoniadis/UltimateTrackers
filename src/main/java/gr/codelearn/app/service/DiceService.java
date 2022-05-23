@@ -32,96 +32,32 @@ public class DiceService {
     }
 
     // The method now also calls the logger since it is only executed once per visit
-    public List<Die> getAllDieResults(){
-        return diceRepository.getAllDieResults();
+    public List<Die> getResults(String tracker){
+        return diceRepository.getAllResults(tracker);
     }
 
-    public int throwDie() {
+    public int throwDie(String tracker){
         int min = 1;
         int max = 6;
         int result = ThreadLocalRandom.current().nextInt(min, max + 1);
         log.info("A die was thrown with the result being: {}", result);
-        diceRepository.saveResult(result);
+        diceRepository.saveResult(result, tracker);
         // we want the result of the throw to be returned so that the user also knows what it was
         return result;
     }
 
-    public List<Log> getAllDiceLogs(){
-        return diceRepository.getAllDiceLogs();
+    public List<Log> getAllLogs(String tracker){
+        return diceRepository.getAllLogs(tracker);
     }
-
-    
-    // Animal Tracker
-
-    // The method now also calls the logger since it is only executed once per visit
-    public List<Die> getAllAnimalResults(){
-        return diceRepository.getAllAnimalResults();
-    }
-
-    public int throwAnimal() {
-        int min = 1;
-        int max = 6;
-        int result = ThreadLocalRandom.current().nextInt(min, max + 1);
-        log.info("A die was thrown with the result being: {}", result);
-        diceRepository.saveAnimal(result);
-        return result;
-    }
-
-    public List<Log> getAllAnimalLogs(){
-        return diceRepository.getAllAnimalLogs();
-    }
-
-
-    // Shape Tracker
-
-    public List<Die> getAllGeometricShapeResults(){
-        return diceRepository.getAllGeometricShapeResults();
-    }
-
-    public int throwGeometricShape() {
-        int min = 1;
-        int max = 6;
-        int result = ThreadLocalRandom.current().nextInt(min, max + 1);
-        log.info("A die was thrown with the result being: {}", result);
-        diceRepository.saveGeometricShape(result);
-        // we want the result of the throw to be returned so that the user also knows what it was
-        return result;
-    }
-
 
     // Loggers, write to db methods
-    public Object addAnimalLog(){
-        diceRepository.logAnimal();
+    public Object addLog(String tracker){
+        diceRepository.log(tracker);
         return null;
     }
 
-    public Object addDiceLog(){
-        diceRepository.logDice();
-        return null;
-    }
-
-    public Object addShapeLog(){
-        diceRepository.logShape();
-        return null;
-    }
-
-    // Loggers get methods
-    public List<Log> getAllShapeLogs(){
-        return diceRepository.getAllShapeLogs();
-    }
-
-    public Object emptyDiceLogs(){
-        diceRepository.resetDiceStats();
-        return null;
-    }
-
-    public Object emptyAnimalLogs(){
-        diceRepository.resetAnimalStats();
-        return null;
-    }
-
-    public Object emptyShapeLogs(){
-        diceRepository.resetShapeStats();
+    public Object emptyLogs(String tracker){
+        diceRepository.resetStats(tracker);
         return null;
     }
 }

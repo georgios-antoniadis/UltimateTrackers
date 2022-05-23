@@ -53,22 +53,22 @@ public class DiceController {
         // in order to access it in the html/ftl file, you need to use the name typed as the first parameter
         // in this case "allDieResults"
         if (check == 0){
-            model.addAttribute("diceLog", diceService.addDiceLog());    
+            model.addAttribute("diceLog", diceService.addLog("dice"));    
         }
-        model.addAttribute("allDieResults", diceService.getAllDieResults());
+        model.addAttribute("allDieResults", diceService.getResults("dice"));
         return "diceTracker";
     }
 
     @PostMapping("/throwDice")
     public String throwDice(RedirectAttributes redirectAttributes){
         // redirect attribute which simply adds what was the result of a throw
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwDie());
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwDie("dice"));
         return "redirect:/diceTracker/1";
     }
 
     @PostMapping("/emptyDice")
     public String resetDice(RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyDiceLogs());
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("dice"));
         return "redirect:/resetStatistics";
     }
 
@@ -77,31 +77,33 @@ public class DiceController {
     @GetMapping("/animalTracker/{check}")
     public String animalTracker(Model model, @PathVariable Integer check) {
         if (check == 0){
-            model.addAttribute("animalLog", diceService.addAnimalLog());    
+            model.addAttribute("animalLog", diceService.addLog("animal"));    
         }
-        model.addAttribute("allAnimalResults", diceService.getAllAnimalResults());
+        else{
+            model.addAttribute("numberOfDice", diceService.throwDie("animal"));
+        }
+        model.addAttribute("allAnimalResults", diceService.getResults("animal"));
         return "animalTracker";
     }
 
     // Throw animal dice
     @PostMapping("/randomAnimal")
-    public String randomAnimal(RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwAnimal());
+    public String randomAnimal(){
         return "redirect:/animalTracker/1";
     }
 
     @PostMapping("/emptyAnimal")
     public String resetAnimal(RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyAnimalLogs());
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("animal"));
         return "redirect:/resetStatistics";
     }
 
     @GetMapping("/viewStatistics")
     public String viewStatistics(Model model) {
         // Returning stats page and adding as attributes the data from all tables
-        model.addAttribute("allAnimalLogs", diceService.getAllAnimalLogs());
-        model.addAttribute("allDiceLogs", diceService.getAllDiceLogs());
-        model.addAttribute("allShapeLogs", diceService.getAllShapeLogs());
+        model.addAttribute("allAnimalLogs", diceService.getAllLogs("animal"));
+        model.addAttribute("allDiceLogs", diceService.getAllLogs("dice"));
+        model.addAttribute("allShapeLogs", diceService.getAllLogs("shape"));
         return "viewStatistics";
     }
 
@@ -118,9 +120,9 @@ public class DiceController {
     @GetMapping("/geometricShapeTracker/{check}")
     public String geometricShapeTracker(Model model, @PathVariable Integer check) {
         if (check == 0){
-            model.addAttribute("shapeLog", diceService.addShapeLog());    
+            model.addAttribute("shapeLog", diceService.addLog("shape"));    
         }
-        model.addAttribute("allGeometricShapeResults", diceService.getAllGeometricShapeResults());
+        model.addAttribute("allGeometricShapeResults", diceService.getResults("shape"));
         return "geometricShapeTracker";
     }
 
@@ -128,13 +130,13 @@ public class DiceController {
     @PostMapping("/randomGeometricShape")
     public String randomGeometricShape(RedirectAttributes redirectAttributes){
         // redirect attribute which simply adds what was the result of a throw
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwGeometricShape());
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.throwDie("shape"));
         return "redirect:/geometricShapeTracker/1";
     }
 
     @PostMapping("/emptyShape")
     public String resetShape(RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyShapeLogs());
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("shape"));
         return "redirect:/resetStatistics";
     }
 
