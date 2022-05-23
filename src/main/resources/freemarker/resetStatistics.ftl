@@ -16,7 +16,10 @@
 
 <div style="text-align: center">
     <form action="/emptyDice" method="post">
-        <input type="submit" value="Empty Dice Table">
+        <input type="submit" value="Empty Dice Logs">
+    </form>
+    <form action="/emptyDiceStats" method="post">
+        <input type="submit" value="Empty Dice Tracker Table">
     </form>
 </div>
 
@@ -24,7 +27,10 @@
 
 <div style="text-align: center">
     <form action="/emptyAnimal" method="post">
-        <input type="submit" value="Empty Animal Table">
+        <input type="submit" value="Empty Animal Logs">
+    </form>
+    <form action="/emptyAnimalStats" method="post">
+        <input type="submit" value="Empty Animal Tracker Table">
     </form>
 </div>
 
@@ -32,7 +38,10 @@
 
 <div style="text-align: center">
     <form action="/emptyShape" method="post">
-        <input type="submit" value="Empty Shape Table">
+        <input type="submit" value="Empty Shape Logs">
+    </form>
+    <form action="/emptyShapeStats" method="post">
+        <input type="submit" value="Empty Shape Tracker Table">
     </form>
 </div>
 

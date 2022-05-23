@@ -71,6 +71,12 @@ public class DiceController {
         redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("dice"));
         return "redirect:/resetStatistics";
     }
+    
+    @PostMapping("/emptyDiceStats")
+    public String resetDiceStats(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyStats("dice"));
+        return "redirect:/resetStatistics";
+    }
 
     // Start: Giorgos Antoniadis
     // Adding the animalTracker as another endpoint
@@ -95,6 +101,12 @@ public class DiceController {
     @PostMapping("/emptyAnimal")
     public String resetAnimal(RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("animal"));
+        return "redirect:/resetStatistics";
+    }
+
+    @PostMapping("/emptyAnimalStats")
+    public String resetAnimalStats(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyStats("animal"));
         return "redirect:/resetStatistics";
     }
 
@@ -137,6 +149,12 @@ public class DiceController {
     @PostMapping("/emptyShape")
     public String resetShape(RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyLogs("shape"));
+        return "redirect:/resetStatistics";
+    }
+
+    @PostMapping("/emptyShapeStats")
+    public String resetShapeStats(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("numberOfDice", diceService.emptyStats("shape"));
         return "redirect:/resetStatistics";
     }
 

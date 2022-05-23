@@ -14,6 +14,7 @@ import java.util.List;
 @Slf4j
 public class DiceRepository {
 
+    // Listing dice throw results for each tracker
     public List<Die> getAllResults(String tracker) {
         List<Die> allResults = new ArrayList<>();
         try {
@@ -42,6 +43,7 @@ public class DiceRepository {
         return allResults;
     }
 
+    // Storing the new dice throw to the corresponding table
     public void saveResult(int result, String tracker) {
         try {
             String query;
@@ -65,8 +67,28 @@ public class DiceRepository {
         }
     }
 
+    // Method to reset the tracker's tables that keep track of dice throws for each tracker
+    public void resetStats(String tracker){
+        try{
+            String query;
+            if (tracker == "dice"){
+                query = "TRUNCATE TABLE DICETRACKER";
+            }
+            else if (tracker == "animal"){
+                query = "TRUNCATE TABLE ANIMALTRACKER";
+            }
+            else{
+                query = "TRUNCATE TABLE GEOMETRICSHAPETRACKER";
+            }
+            Connection connection = DataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            log.error("For some reason, a connection could not be obtained", e);
+        }
+    }
 
-    // Method that logs a visit to the dice tracker page
+    // Method that logs a visit each tracker page
     public void log(String tracker){
         try{
             String query;
@@ -88,6 +110,7 @@ public class DiceRepository {
         }
     }
 
+    // Fetch log information from log tables
     public List<Log> getAllLogs(String tracker) {
         List<Log> allLogs = new ArrayList<>();
         try {
@@ -115,7 +138,8 @@ public class DiceRepository {
         return allLogs;
     }
 
-    public void resetStats(String tracker){
+    // Emptying log tables
+    public void resetLogs(String tracker){
         try{
             String query;
             if (tracker == "dice"){

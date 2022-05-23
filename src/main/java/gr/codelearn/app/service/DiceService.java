@@ -46,6 +46,11 @@ public class DiceService {
         return result;
     }
 
+    public Object emptyStats(String tracker){
+        diceRepository.resetStats(tracker);
+        return null;
+    }
+
     public List<Log> getAllLogs(String tracker){
         return diceRepository.getAllLogs(tracker);
     }
@@ -57,7 +62,7 @@ public class DiceService {
     }
 
     public Object emptyLogs(String tracker){
-        diceRepository.resetStats(tracker);
+        diceRepository.resetLogs(tracker);
         return null;
     }
 }
